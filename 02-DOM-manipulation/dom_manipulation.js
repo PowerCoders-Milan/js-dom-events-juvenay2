@@ -23,10 +23,14 @@ list.insertAdjacentHTML('beforeend', '<tr><td>15</td><td>Spezia</td><td>39</td><
 
 // Ex 4. Write some code to sum all points given to all teams
 //       Make the function summarizePoints() return it
-const summarizePoints = (sum) => {
-   
-  // TODO: return the sum
-  return ;
+const summarizePoints = () => {
+   const tdScores = document.querySelectorAll('tbody tr td:last-child');
+   let total = 0;
+
+   tdScores.forEach(tdScore => {
+     total += parseInt(tdScore.innerText);
+   })
+   return total;
 };
 
 
